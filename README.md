@@ -1,16 +1,102 @@
-# React + Vite
+# 📋 Todo App (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Todo App sederhana untuk mengelola daftar tugas dengan fitur:
+- ✅ Tambah tugas baru
+- 🔄 Tandai tugas selesai / belum selesai
+- ❌ Hapus tugas individu
+- 🗑️ Hapus semua tugas
+- 🧹 Hapus tugas yang sudah selesai
+- 📊 Statistik tugas (aktif, selesai, total)
+- 💾 Data tersimpan di localStorage (persisten)
+- 🎨 UI modern dengan TailwindCSS + custom CSS
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Demo
+👉 Live Demo: https://lann747.github.io/todo-app
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📦 Teknologi
+- React + Vite
+- TailwindCSS
+- LocalStorage
+- gh-pages (untuk deploy)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Cara Install & Jalankan
+
+1. Clone repo:
+   ```bash
+   git clone https://github.com/USERNAME/todo-app.git
+   cd todo-app
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Jalankan server development:
+   ```bash
+   npm run dev
+   ```
+
+4. Build untuk production:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 🌐 Deploy ke GitHub Pages
+
+1. Tambahkan `homepage` di `package.json`:
+   ```json
+   "homepage": "https://lann747.github.io/todo-app"
+   ```
+
+2. Tambahkan script deploy di `package.json`:
+   ```json
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d dist"
+   ```
+
+3. Edit `vite.config.js`:
+   ```js
+   export default defineConfig({
+     plugins: [react()],
+     base: "/todo-app/", // ganti dengan nama repo kamu
+   });
+   ```
+
+4. Push project ke GitHub:
+   ```bash
+   git init
+   git remote add origin https://github.com/USERNAME/todo-app.git
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git push -u origin main
+   ```
+
+5. Deploy:
+   ```bash
+   npm run deploy
+   ```
+
+6. Aktifkan GitHub Pages di repo:
+   - Buka **Settings → Pages**
+   - Pilih branch: `gh-pages`
+   - Save
+
+7. Akses app di:
+   ```
+   https://lann747.github.io/todo-app
+   ```
+
+---
+
+## ✨ Author
+Dibuat dengan ❤️ oleh lann747
