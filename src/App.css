@@ -1,0 +1,190 @@
+/* ===================================
+   Todo Item Styles (Optimized)
+   =================================== */
+
+/* Color variables */
+:root {
+  --primary: #2196f3;
+  --primary-light: #e3f2fd;
+  --primary-dark: #1565c0;
+  --completed-bg: #f8fdff;
+  --completed-text: #78909c;
+
+  --delete-bg: #fef7ff;
+  --delete-border: #f3e5f5;
+  --delete-hover: #f3e5f5;
+  --delete-color: #7b1fa2;
+  --delete-hover-color: #4a0072;
+
+  --text-main: #333;
+  --shadow: rgba(33, 150, 243, 0.1);
+  --shadow-hover: rgba(33, 150, 243, 0.15);
+}
+
+/* Todo item container */
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  margin: 8px 0;
+  background: #fff;
+  border: 1px solid var(--primary-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.todo-item:hover {
+  box-shadow: 0 4px 8px var(--shadow-hover);
+  transform: translateY(-1px);
+  border-color: var(--primary);
+}
+
+.todo-item.completed {
+  background: var(--completed-bg);
+  border-color: var(--primary-light);
+}
+
+/* Status indicator */
+.status-indicator {
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.status-circle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--primary);
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+.status-circle.completed {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.status-circle:hover {
+  background: var(--primary-light);
+  transform: scale(1.1);
+}
+
+/* Todo text */
+.todo-text {
+  flex: 1;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-main);
+  transition: background 0.2s ease;
+}
+
+.todo-text:hover {
+  background: var(--primary-light);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--completed-text);
+}
+
+/* Delete button */
+.delete-btn {
+  background: var(--delete-bg);
+  border: 1px solid var(--delete-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--delete-color);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background: var(--delete-hover);
+  border-color: var(--delete-color);
+  color: var(--delete-hover-color);
+  transform: scale(1.05);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* Scrollbar custom */
+.max-h-96 {
+  max-height: 24rem;
+}
+
+.max-h-96::-webkit-scrollbar {
+  width: 6px;
+}
+
+.max-h-96::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.max-h-96::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.max-h-96::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .max-h-96 {
+    max-height: 16rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-item {
+    padding: 10px 12px;
+    margin: 6px 0;
+  }
+
+  .status-circle {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .todo-text {
+    font-size: 13px;
+    padding: 2px 6px;
+  }
+
+  .delete-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Accessibility */
+.todo-text:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.delete-btn:focus {
+  outline: 2px solid var(--delete-color);
+  outline-offset: 1px;
+}
